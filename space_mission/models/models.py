@@ -5,16 +5,16 @@ from odoo import models, fields, api
 class spacecraft(models.Model):
     _name = 'space_mission.spacecraft'
     
-    size = fields.Integer(string="Dimensiones")
-    shipType = fields.Selection(string="Tipo de nave",
+    size = fields.Integer(string='Dimensiones')
+    shipType = fields.Selection(string='Tipo de nave',
                                selection=[('espacial','Espacial'),
                                           ('astronomica','Astronomica')])
-    fuelType = fields.Selection(string="Tipo de combustible",
+    fuelType = fields.Selection(string='Tipo de combustible',
                                selection=[('gas','Gas'),
                                           ('electricidad','Electricidad'), 
                                           ('eolica','eolica')])
-    passengersCont = fields.Integer("Numero de pasajeros")
-    active = fields.Boolean(string="Activo", default=True)
+    passengersCont = fields.Integer('Numero de pasajeros')
+    active = fields.Boolean(string='Activo', default=True)
     
     
 # class space_mission(models.Model):
