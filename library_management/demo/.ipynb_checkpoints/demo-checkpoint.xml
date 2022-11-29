@@ -15,6 +15,7 @@
             <field name="name">Estudio en escarlata</field>
             <field name="author_id">1</field>
         </record>
+        
 <!--
           <record id="object0" model="library_management.library_management">
             <field name="name">Object 0</field>
