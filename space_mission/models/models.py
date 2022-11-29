@@ -16,7 +16,6 @@ class spacecraft(models.Model):
     passengersCont = fields.Integer('Numero de pasajeros')
     active = fields.Boolean(string='Activo', default=True)
     
-    
 # class space_mission(models.Model):
 #     _name = 'space_mission.space_mission'
 #     _description = 'space_mission.space_mission'
