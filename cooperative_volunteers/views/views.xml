@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="cooperative_volunteers.list">
+      <field name="name">cooperative_volunteers list</field>
+      <field name="model">cooperative_volunteers.cooperative_volunteers</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="cooperative_volunteers.action_window">
+      <field name="name">cooperative_volunteers window</field>
+      <field name="res_model">cooperative_volunteers.cooperative_volunteers</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="cooperative_volunteers.action_server">
+      <field name="name">cooperative_volunteers server</field>
+      <field name="model_id" ref="model_cooperative_volunteers_cooperative_volunteers"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="cooperative_volunteers" id="cooperative_volunteers.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="cooperative_volunteers.menu_1" parent="cooperative_volunteers.menu_root"/>
+    <menuitem name="Menu 2" id="cooperative_volunteers.menu_2" parent="cooperative_volunteers.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="cooperative_volunteers.menu_1_list" parent="cooperative_volunteers.menu_1"
+              action="cooperative_volunteers.action_window"/>
+    <menuitem name="Server to list" id="cooperative_volunteers" parent="cooperative_volunteers.menu_2"
+              action="cooperative_volunteers.action_server"/>
+-->
+  </data>
+</odoo>
