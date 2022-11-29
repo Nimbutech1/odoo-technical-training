@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="space_mission.list">
+      <field name="name">space_mission list</field>
+      <field name="model">space_mission.space_mission</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="space_mission.action_window">
+      <field name="name">space_mission window</field>
+      <field name="res_model">space_mission.space_mission</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="space_mission.action_server">
+      <field name="name">space_mission server</field>
+      <field name="model_id" ref="model_space_mission_space_mission"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="space_mission" id="space_mission.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="space_mission.menu_1" parent="space_mission.menu_root"/>
+    <menuitem name="Menu 2" id="space_mission.menu_2" parent="space_mission.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="space_mission.menu_1_list" parent="space_mission.menu_1"
+              action="space_mission.action_window"/>
+    <menuitem name="Server to list" id="space_mission" parent="space_mission.menu_2"
+              action="space_mission.action_server"/>
+-->
+  </data>
+</odoo>
