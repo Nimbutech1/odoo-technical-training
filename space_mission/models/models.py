@@ -10,8 +10,10 @@ class spacecraft(models.Model):
                                selection=[('espacial','Espacial'),
                                           ('astronomica','Astronomica')])
     fuelType = fields.Selection(string="Tipo de combustible",
-                               selection=[('gas','Gas'),('electricidad','Electricidad'), ('eolica','eolica')])
-    passengersCont = field.Integer("Numero de pasajeros")
+                               selection=[('gas','Gas'),
+                                          ('electricidad','Electricidad'), 
+                                          ('eolica','eolica')])
+    passengersCont = fields.Integer("Numero de pasajeros")
     active = fields.Boolean(string="Activo", default=True)
     
     
