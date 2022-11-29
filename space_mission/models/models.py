@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class spacecraft(models.Model):
     _name = 'space_mission.spacecraft'
     
+    name = fields.Char(string="Nombre de la nave")
     size = fields.Integer(string='Dimensiones')
     shipType = fields.Selection(string='Tipo de nave',
                                selection=[('espacial','Espacial'),
