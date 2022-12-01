@@ -12,7 +12,7 @@ class Task(models.Model):
     taskType = fields.Selection(string="Tipo de tarea", selection=[('individual', 'Individual'),
                                                                    ('grupal','Grupal')])
     isRepeated = fields.Boolean(string="¿Se repite?")
-    repetitions = fields.Integer(string="Repeticiones", compute='_compute_repetitions')
+    repetitions = fields.Integer(string="Repeticiones", compute='_compute_repititions')
     
     def _compute_repititions(self):
         for record in self:
