@@ -12,9 +12,52 @@
           </field>
       </record>
       
-      <menuitem name="Libreria" id="menu_library_management" sequence="1"/>
+      <menuitem name="Libreria" id="menu_library_management" sequence="1" web_icon="library_management,static/description/library_management.png"/>
       <menuitem name="Libreria" id="submenu_library_management_book" sequence="2" parent="menu_library_management"/>
-      <menuitem name="Libros" id="option_library_management_book" sequence="3" parent="submenu_library_management_book"/>
+      <menuitem name="Libros" id="option_library_management_book" sequence="3" parent="submenu_library_management_book"
+                action="library_management_book_action"
+                />
+      
+        <record model="ir.ui.view" id="library_management_book_view_form">
+          <field name="name">library_management.book.form</field>
+          <field name="model">library_management.book</field>
+          <field name="arch" type="xml">
+              <form string="book Form">
+                  <sheet>
+                      <group>
+                          <group>
+                              <field name="name"/>
+                          </group>
+                          <group>
+                              <field name="author_id"/>
+                          </group>
+                      </group>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+      
+      <record model="ir.ui.view" id="library_management_book_view_list">
+          <field name="name">library_management.book.list</field>
+          <field name="model">library_management.book</field>
+          <field name="arch" type="xml">
+              <tree string="book List">
+                    <field name="name" />
+                    <field name="author_id" />
+              </tree>
+          </field>
+      </record>
+      
+      <record model="ir.ui.view" id="library_management_book_view_search">
+          <field name="name">library_management.book.search</field>
+          <field name="model">library_management.book</field>
+          <field name="arch" type="xml">
+              <search>
+                  <field name="name"/>
+                  <field name="author_id"/>
+              </search>
+          </field>
+      </record>
     <!-- explicit list view definition -->
 <!--
     <record model="ir.ui.view" id="library_management.list">
