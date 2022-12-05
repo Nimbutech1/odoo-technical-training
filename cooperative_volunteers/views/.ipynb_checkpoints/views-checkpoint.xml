@@ -15,5 +15,64 @@
       <menuitem name="Tasks" id="submenu_cooperative_tasks" parent="menu_cooperative_tasks" sequence="3" action="cooperative_list_actions"/>
 <!--       <menuitem name="Tasks" id="menu_cooperative_tasks" parent="menu_cooperative" sequence="2"/> -->
       
+      <record model="ir.ui.view" id="cooperative_volunteers_task_view_form">
+          <field name="name">cooperative_volunteers.task.form</field>
+          <field name="model">cooperative_volunteers.task</field>
+          <field name="arch" type="xml">
+              <form string="Tasks Form">
+                  <sheet>
+                      <h1><field name="name"/></h1>
+                      <group>
+                          <group>
+                              <field name="startTime"/>
+                          </group>
+                          <group>
+                              <field name="endTime"/>
+                          </group>    
+                          <group>  
+                              <field name="description"/>
+                          </group>
+                          <group>
+                                <field name="taskType"/>
+                          </group>
+                      </group>
+                      <notebook>
+                          <page string="Descripción">
+                              <group>
+                                <field name="isRepeated"/>
+                              </group>
+                              <group>
+                                <field name="repetitions"/>
+                              </group>
+                          </page>
+                      </notebook>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+      
+      <record model="ir.ui.view" id="cooperative_volunteers_taks_view_list">
+          <field name="name">cooperative_volunteers.task.list</field>
+          <field name="model">cooperative_volunteers.task</field>
+          <field name="arch" type="xml">
+              <tree string="Cooperative List">
+                  <field name="name"/>
+                  <field name="startTime"/>
+                  <field name="endTime"/>
+              </tree>
+          </field>
+      </record>
+      
+      <record model="ir.ui.view" id="cooperative_volunteers_task_view_search">
+          <field name="name">cooperative_volunteers.task.search</field>
+          <field name="model">cooperative_volunteers.task</field>
+          <field name="arch" type="xml">
+              <search>
+                  <field name="name"/>
+                  <field name="description"/>
+              </search>
+          </field>
+      </record>
+      
   </data>
 </odoo>
