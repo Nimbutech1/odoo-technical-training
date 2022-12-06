@@ -13,6 +13,7 @@ class ResPartner(models.Model):
         return tools.image_resize_image_big(base64.b64encode(open(image_path, 'rb').read()))
     
     image = fields.Binary("Photo", default='_get_default_image')
+    image_1920 = = fields.Binary("Photo", default='_get_default_image')
     
 
 # class custom_modules(models.Model):
