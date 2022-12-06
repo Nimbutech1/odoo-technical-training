@@ -5,14 +5,15 @@ from odoo import tools
 from odoo.modules import get_module_resource
 import base64
 
-class Partnet(models.Model):
+class ResPartner(models.Model):
     _inherit = 'res.partner'
-    
-    image = fields.Binary("Photo", default='_get_default_image')
     
     def _get_default_image(self):
         image_path = modules.get_module_resource('custom_modules', 'static/src/img', 'image.jpg')
         return tools.image_resize_image_big(base64.b64encode(open(image_path, 'rb').read()))
+    
+    image = fields.Binary("Photo", default='_get_default_image')
+    
 
 # class custom_modules(models.Model):
 #     _name = 'custom_modules.custom_modules'
