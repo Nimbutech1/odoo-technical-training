@@ -9,7 +9,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
     
     def _get_default_image(self):
-        image_path = modules.get_module_resource('custom_modules', 'static/src/img', 'image.jpg')
+        image_path = modules.get_module_resource('custom_modules', 'static/img', 'image.jpg')
         return tools.image_resize_image_big(base64.b64encode(open(image_path, 'rb').read()))
     
     image = fields.Binary("Photo", default='_get_default_image')
