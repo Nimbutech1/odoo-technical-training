@@ -12,9 +12,37 @@
           </field>
       </record>
       
+      <record model="ir.actions.act_window" id="space_mission_mission_action">
+          <field name="name">Missions</field>
+          <field name="res_model">space_mission.mission</field>
+          <field name="view_mode">tree,form</field>
+          <field name="help" type="html">
+              <p>
+                  Crear una nueva mission
+              </p>
+          </field>
+      </record>
+      
+      <record model="ir.actions.act_window" id="space_mission_astronauts_action">
+          <field name="name">Astronautas</field>
+          <field name="res_model">space_mission.astronaut</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+      
+      <record model="ir.actions.act_window" id="space_mission_phases_action">
+          <field name="name">Mission Fase</field>
+          <field name="res_model">space_mission.mission_phase</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+      
       <menuitem name="Space Mission" id="menu_space_mission" sequence="1" web_icon="space_mission,static/description/space_mission.png"/>
       <menuitem name="Nave espacial" id="submenu_menu_space_mission_spacecraft" parent="menu_space_mission" sequence="2" />
       <menuitem name="Nave espacial" id="option_space_mission_spacecraft" parent="submenu_menu_space_mission_spacecraft" sequence="3" action="space_mission_list_action"/>
+      <menuitem name="Misiones" id="option_space_mission_mission" parent="submenu_menu_space_mission_spacecraft" sequence="4" action="space_mission_mission_action"/>
+      
+      <menuitem name="Astronautas" id="option_space_mission_astronauts" parent="submenu_menu_space_mission_spacecraft" sequence="5" action="space_mission_astronauts_action"/>
+      
+      <menuitem name="Missions Phases" id="option_space_mission_phases" parent="submenu_menu_space_mission_spacecraft" sequence="6" action="space_mission_phases_action"/>
       
        <record model="ir.ui.view" id="space_mission_spacecraft_view_form">
           <field name="name">space_mission.spacecraft.form</field>
@@ -28,12 +56,18 @@
                                   <field name="active"/>
                           </group>
                           <group>
-                              <field name="shipType"/>
+                              <field name="payload_capacity"/>
+                          </group>
+                           <group>
+                              <field name="mission_id"/>
+                          </group>
+                           <group>
+                              <field name="crew"/>
                           </group>
                       </group>
                       <notebook>
-                          <page string="Descripcion">
-                              <field name="size"/>
+                          <page string="Details">
+                              <field name="launch_date"/>
                           </page>
                       </notebook>
                   </sheet>
@@ -47,7 +81,7 @@
           <field name="arch" type="xml">
               <tree string="Spacecraft List">
                     <field name="name" />
-                    <field name="size" />
+                    <field name="model" />
               </tree>
           </field>
       </record>
@@ -58,7 +92,7 @@
           <field name="arch" type="xml">
               <search>
                   <field name="name"/>
-                  <field name="size"/>
+                  <field name="model"/>
               </search>
           </field>
       </record>
