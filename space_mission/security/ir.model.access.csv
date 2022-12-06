@@ -3,3 +3,6 @@ space_mission_admin,space mission admin,model_space_mission_spacecraft,group_spa
 space_mission_crew,space mission crew,model_space_mission_spacecraft,group_space_mission_crew,1,1,1,0
 space_mission_user,space mission user,model_space_mission_spacecraft,group_space_mission_user,1,0,0,0
 space_mission_read_all,space mission read all,model_space_mission_spacecraft,,1,0,0,0
+space_mission_admin_astronaut,space mission admin,model_space_mission_astronaut,group_space_mission_admin,1,1,1,1
+space_mission_admin_mission,space mission admin,model_space_mission_mission,group_space_mission_admin,1,1,1,1
+space_mission_admin_mission_phase,space mission admin,model_space_mission_mission_phase,group_space_mission_admin,1,1,1,1
