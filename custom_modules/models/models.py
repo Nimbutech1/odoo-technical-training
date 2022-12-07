@@ -8,22 +8,12 @@ import base64
 class ResPartner(models.Model):
     _inherit = 'res.partner'
     
-     def _avatar_get_placeholder_path(self):
-            print(self)
-        if self.is_company:
-            return "custom_modules/static/img/image.jpg"
-        if self.type == 'delivery':
-            return "custom_modules/static/img/image.jpg"
-        if self.type == 'invoice':
-            return "custom_modules/static/img/image.jpg"
-        return super()._avatar_get_placeholder_path()
-    
-class AvatarMixin(models.AbstractModel):
-    _inherit = 'avatar.mixin'
-    
-     def _avatar_get_placeholder_path(self):
-        return "custom_modules/static/img/image.jpg"
-
+    @api.model
+    def create(self, vals_list):
+        res = super(ResPartner, self).create(vals_list)
+        print("working")
+        return res
+        
 # class custom_modules(models.Model):
 #     _name = 'custom_modules.custom_modules'
 #     _description = 'custom_modules.custom_modules'
