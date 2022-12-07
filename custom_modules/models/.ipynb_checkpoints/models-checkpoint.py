@@ -8,13 +8,21 @@ import base64
 class ResPartner(models.Model):
     _inherit = 'res.partner'
     
-    def _get_default_image(self):
-        image_path = modules.get_module_resource('custom_modules', 'static/img', 'image.jpg')
-        return tools.image_resize_image_big(base64.b64encode(open(image_path, 'rb').read()))
+     def _avatar_get_placeholder_path(self):
+            print(self)
+        if self.is_company:
+            return "custom_modules/static/img/image.jpg"
+        if self.type == 'delivery':
+            return "custom_modules/static/img/image.jpg"
+        if self.type == 'invoice':
+            return "custom_modules/static/img/image.jpg"
+        return super()._avatar_get_placeholder_path()
     
-    image = fields.Binary("Photo", default='_get_default_image')
-    image_1920 = = fields.Binary("Photo", default='_get_default_image')
+class AvatarMixin(models.AbstractModel):
+    _inherit = 'avatar.mixin'
     
+     def _avatar_get_placeholder_path(self):
+        return "custom_modules/static/img/avatar_grey.png"
 
 # class custom_modules(models.Model):
 #     _name = 'custom_modules.custom_modules'
