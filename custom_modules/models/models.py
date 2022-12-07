@@ -22,7 +22,7 @@ class AvatarMixin(models.AbstractModel):
     _inherit = 'avatar.mixin'
     
      def _avatar_get_placeholder_path(self):
-        return "custom_modules/static/img/avatar_grey.png"
+        return "custom_modules/static/img/image.jpg"
 
 # class custom_modules(models.Model):
 #     _name = 'custom_modules.custom_modules'
