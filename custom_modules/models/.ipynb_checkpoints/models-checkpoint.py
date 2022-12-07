@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from odoo import tools
-from odoo.modules import get_module_resource
-import base64
+from odoo.exceptions import UserError, ValidationError
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
@@ -11,7 +9,7 @@ class ResPartner(models.Model):
     @api.model
     def create(self, vals_list):
         res = super(ResPartner, self).create(vals_list)
-        print("working")
+        raise Usererrpr("Error")
         return res
         
 # class custom_modules(models.Model):
