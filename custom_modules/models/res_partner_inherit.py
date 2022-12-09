@@ -21,7 +21,7 @@ class AvatarMixin(models.AbstractModel):
     def _avatar_get_placeholder_path(self):
         return "custom_modules/static/img/custom_user.png"
     
-# class custom_modules(models.Model):
+# class custom_modules(models.Model):Z
 #     _name = 'custom_modules.custom_modules'
 #     _description = 'custom_modules.custom_modules'
 
