@@ -10,7 +10,7 @@ class ResPartner(models.Model):
     def create(self, vals_list):
         res = super(ResPartner, self).create(vals_list)
         raise Usererrpr("Error")
-        return res
+        return res 
         
 # class custom_modules(models.Model):
 #     _name = 'custom_modules.custom_modules'
