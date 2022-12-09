@@ -16,7 +16,7 @@ class ResPartner(models.Model):
         return super()._avatar_get_placeholder_path()
     
 class AvatarMixin(models.AbstractModel):
-    _inherit = avatar.mixin
+    _inherit = 'avatar.mixin'
     
     def _avatar_get_placeholder_path(self):
         return "custom_modules/static/img/custom_user.png"
